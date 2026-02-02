@@ -340,6 +340,8 @@ GameObject:
   - component: {fileID: 165043691}
   - component: {fileID: 165043695}
   - component: {fileID: 165043696}
+  - component: {fileID: 165043697}
+  - component: {fileID: 165043698}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -434,7 +436,7 @@ Transform:
   m_GameObject: {fileID: 165043689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3551807, y: 0.26388, z: -4.50344}
+  m_LocalPosition: {x: 2.3551807, y: 1.38, z: -4.50344}
   m_LocalScale: {x: 18.73, y: 2.93, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,7 +454,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 1
+  m_Carve: 0
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -470,6 +472,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoveObject
   duration: 1
   distance: 5
+--- !u!54 &165043697
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165043689}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &165043698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165043689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e93375d4e699b4bb0cb136b7d64c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackObstacle
+  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
+  affectedLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  rb: {fileID: 165043697}
 --- !u!1 &242712081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1371,7 @@ GameObject:
   - component: {fileID: 553286890}
   - component: {fileID: 553286891}
   - component: {fileID: 553286892}
+  - component: {fileID: 553286893}
   m_Layer: 0
   m_Name: Sarah
   m_TagString: Player
@@ -1397,7 +1444,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1405,6 +1452,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &553286893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553286888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2148336bd06e934ba5703a992cc0b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
+  interruptKnockback: 0
+  navmeshRadius: 10
 --- !u!1001 &569160241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2312,6 +2374,8 @@ GameObject:
   - component: {fileID: 1008902954}
   - component: {fileID: 1008902953}
   - component: {fileID: 1008902958}
+  - component: {fileID: 1008902959}
+  - component: {fileID: 1008902960}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -2331,7 +2395,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 1
+  m_Carve: 0
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -2422,7 +2486,7 @@ Transform:
   m_GameObject: {fileID: 1008902952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.46482, y: 0.25387996, z: -4.54344}
+  m_LocalPosition: {x: -16.46482, y: 0.54, z: -4.54344}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2442,6 +2506,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoveObject
   duration: 1
   distance: 6
+--- !u!54 &1008902959
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008902952}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1008902960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008902952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e93375d4e699b4bb0cb136b7d64c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackObstacle
+  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
+  affectedLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  rb: {fileID: 1008902959}
 --- !u!1 &1050351625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,7 +3283,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 1
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -4150,7 +4258,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: dffd2048da5d08d4287007968fd9f0f1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 4c71cad16ea6aa54aa1463dce611b674, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1595788050
 GameObject:
@@ -4618,7 +4726,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 8776c548bbcb0f643aeaafa81aae954e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 37cc097d4e802234d82ea093f40b5155, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &1629347711
 MonoBehaviour:
@@ -4650,7 +4758,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: fb38ac4f080e6cd438c55cf98820fcd5, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 77f88f02f92137e4fb739944802ee82e, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1634951220
 GameObject:
@@ -4789,7 +4897,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20.798948
+  field of view: 7.8793907
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4815,8 +4923,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634951220}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3646235, y: 0.0003164597, z: -0.0001239199, w: 0.931155}
-  m_LocalPosition: {x: 0, y: 22, z: -44}
+  m_LocalRotation: {x: 0.37592438, y: 0.00011817927, z: -0.000047943082, w: 0.92665035}
+  m_LocalPosition: {x: 0, y: 54.08144, z: -76.081436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5012,6 +5120,7 @@ GameObject:
   - component: {fileID: 1723285802}
   - component: {fileID: 1723285804}
   - component: {fileID: 1723285805}
+  - component: {fileID: 1723285806}
   m_Layer: 0
   m_Name: Michael
   m_TagString: Player
@@ -5084,7 +5193,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5092,6 +5201,21 @@ CapsuleCollider:
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1723285806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723285800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2148336bd06e934ba5703a992cc0b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
+  interruptKnockback: 0
+  navmeshRadius: 10
 --- !u!1 &1729555811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,7 +5486,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 20, z: -20}
+  FollowOffset: {x: 0, y: 52.08144, z: -52.08144}
 --- !u!114 &1818553748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5414,8 +5538,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818553745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462346, y: 0.00031645966, z: -0.00012391989, w: 0.931155}
-  m_LocalPosition: {x: 0, y: 22, z: -44}
+  m_LocalRotation: {x: 0.3759244, y: 0.000118179276, z: -0.000047943086, w: 0.92665035}
+  m_LocalPosition: {x: 0, y: 54.08144, z: -76.081436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

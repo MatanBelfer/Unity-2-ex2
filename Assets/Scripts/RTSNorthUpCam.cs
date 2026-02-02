@@ -22,6 +22,8 @@ public class RTSNorthUpCam : MonoBehaviour
     public float maxDist = 60f;
 
     CinemachineFollow follow;
+    private Iknockbackable selectedKnockback;
+
 
     public enum AgentType
     {
@@ -129,9 +131,14 @@ public class RTSNorthUpCam : MonoBehaviour
         selectedAgentCameraTarget = selectedAgentType == AgentType.Agent1 ? cameraTargetAgent1 : cameraTargetAgent2;
         selectedAgentNav = selectedAgentType == AgentType.Agent1 ? agent1 : agent2;
         
+        selectedKnockback = selectedAgentNav
+            ? selectedAgentNav.GetComponent<Iknockbackable>()
+            : null;
+        
         if (isRightClickHeld)
         {
-            SetNavMeshDestination();
+            if (selectedKnockback == null || !selectedKnockback.IsInKnockback)
+                SetNavMeshDestination();
         }
         
         if (isSpaceHeld && selectedAgentCameraTarget != null)
