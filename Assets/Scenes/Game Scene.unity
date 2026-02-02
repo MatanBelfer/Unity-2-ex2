@@ -119,6 +119,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12684274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12684275}
+  - component: {fileID: 12684277}
+  - component: {fileID: 12684276}
+  m_Layer: 8
+  m_Name: KnockbackTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &12684275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12684274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1008902957}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12684276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12684274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e93375d4e699b4bb0cb136b7d64c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackObstacle
+  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
+  affectedLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  rb: {fileID: 1008902959}
+  perTargetCooldown: 3
+  distanceMultiplier: 4
+--- !u!65 &12684277
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12684274}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &24751676
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +414,7 @@ GameObject:
   - component: {fileID: 165043695}
   - component: {fileID: 165043696}
   - component: {fileID: 165043697}
-  - component: {fileID: 165043698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +440,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &165043692
 MeshRenderer:
@@ -439,7 +511,8 @@ Transform:
   m_LocalPosition: {x: 2.3551807, y: 1.38, z: -4.50344}
   m_LocalScale: {x: 18.73, y: 2.93, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1609968663}
   m_Father: {fileID: 1943182396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &165043695
@@ -454,7 +527,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -499,23 +572,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &165043698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165043689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e93375d4e699b4bb0cb136b7d64c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackObstacle
-  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
-  affectedLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  rb: {fileID: 165043697}
 --- !u!1 &242712081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,11 +1500,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -1466,7 +1522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
   profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
   interruptKnockback: 0
-  navmeshRadius: 10
+  navmeshRadius: 12
 --- !u!1001 &569160241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2375,8 +2431,7 @@ GameObject:
   - component: {fileID: 1008902953}
   - component: {fileID: 1008902958}
   - component: {fileID: 1008902959}
-  - component: {fileID: 1008902960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2395,7 +2450,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -2414,11 +2469,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1008902955
 MeshRenderer:
@@ -2489,7 +2544,8 @@ Transform:
   m_LocalPosition: {x: -16.46482, y: 0.54, z: -4.54344}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 12684275}
   m_Father: {fileID: 1943182396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1008902958
@@ -2533,23 +2589,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1008902960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008902952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e93375d4e699b4bb0cb136b7d64c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackObstacle
-  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
-  affectedLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  rb: {fileID: 1008902959}
 --- !u!1 &1050351625
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,6 +4332,79 @@ Transform:
   - {fileID: 1558278902}
   m_Father: {fileID: 414310788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1609968662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609968663}
+  - component: {fileID: 1609968665}
+  - component: {fileID: 1609968664}
+  m_Layer: 8
+  m_Name: KnockbackTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1609968663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609968662}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0048051, y: -0.28668943, z: -0.03999996}
+  m_LocalScale: {x: 0.26695138, y: 0.34129694, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 165043694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1609968664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609968662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e93375d4e699b4bb0cb136b7d64c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackObstacle
+  profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
+  affectedLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  rb: {fileID: 165043697}
+  perTargetCooldown: 3
+  distanceMultiplier: 4
+--- !u!65 &1609968665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609968662}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1622063709
 GameObject:
   m_ObjectHideFlags: 0
@@ -4897,7 +5009,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 7.8793907
+  field of view: 5.9372478
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4923,8 +5035,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634951220}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.37592438, y: 0.00011817927, z: -0.000047943082, w: 0.92665035}
-  m_LocalPosition: {x: 0, y: 54.08144, z: -76.081436}
+  m_LocalRotation: {x: 0.37759584, y: 0.00008892433, z: -0.000036261903, w: 0.92597055}
+  m_LocalPosition: {x: 0, y: 70.9222, z: -92.9222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5193,12 +5305,12 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.2
+  m_Radius: 0.8
+  m_Height: 2.1999998
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1723285806
@@ -5215,7 +5327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
   profile: {fileID: 11400000, guid: e76b49422ed975b44a9ad34ce7a58e7a, type: 2}
   interruptKnockback: 0
-  navmeshRadius: 10
+  navmeshRadius: 12
 --- !u!1 &1729555811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5486,7 +5598,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 52.08144, z: -52.08144}
+  FollowOffset: {x: 0, y: 68.9222, z: -68.9222}
 --- !u!114 &1818553748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5538,8 +5650,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818553745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3759244, y: 0.000118179276, z: -0.000047943086, w: 0.92665035}
-  m_LocalPosition: {x: 0, y: 54.08144, z: -76.081436}
+  m_LocalRotation: {x: 0.37759578, y: 0.00008892432, z: -0.000036261903, w: 0.92597055}
+  m_LocalPosition: {x: 0, y: 70.9222, z: -92.9222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

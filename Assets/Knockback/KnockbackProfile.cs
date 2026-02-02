@@ -22,4 +22,10 @@ public class KnockbackProfile : ScriptableObject
     [Header("Movement Ease")]
     public AnimationCurve displacementEase =
         AnimationCurve.EaseInOut(0, 0, 1, 1);
+    
+    [Header("Hit Stun")]
+    public AnimationCurve stunByImpactSpeed =
+        AnimationCurve.Linear(0, 0.1f, 6, 0.4f);
+
+    public float maxStun = 0.5f;
 }

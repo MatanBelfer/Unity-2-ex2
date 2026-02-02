@@ -95,12 +95,22 @@ public class KnockbackReceiver : MonoBehaviour,Iknockbackable
          yield return null;
       }
 
+      float stunDuration = Mathf.Min(
+         1,
+         profile.maxStun
+      );
+      agent.nextPosition = transform.position;
+      agent.velocity = Vector3.zero;
+      agent.isStopped = true;
+
+      yield return new WaitForSeconds(stunDuration);
+      
+      
+      Debug.Log($"Stunnged for: {stunDuration}");
+      agent.updatePosition = true;
       agent.isStopped = false;
-      if (hadPath)
-         agent.SetDestination(cachedDestination);
       IsInKnockback = false;
       knockbackRoutine = null;
-      Debug.Log("Player knocked!");
       OnKnockbackEnded?.Invoke();
    }
 }
