@@ -16,7 +16,7 @@ public class KnockbackObstacle : MonoBehaviour
     
     [SerializeField] private float distanceMultiplier = 4f;
 
-    // Keeps track of when each object can be knocked again
+    
     private readonly Dictionary<int, float> nextAllowedTime = new();
 
     private Collider triggerCollider;
