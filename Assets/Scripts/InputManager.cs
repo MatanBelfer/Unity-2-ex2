@@ -19,9 +19,10 @@ public class InputManager : MonoBehaviour
         actions.Player.Attack.canceled += (_) => OnLmbUp?.Invoke();
         actions.Player.Interact.performed += _ => OnInteract?.Invoke();
         actions.Player.Move.performed += ctx => OnMove?.Invoke(ctx.ReadValue<Vector2>());
+        actions.Player.Move.canceled += _ => OnMove?.Invoke(Vector2.zero);
         actions.Player.Zoom.performed += ctx => OnZoom?.Invoke(ctx.ReadValue<float>());
         
-        //OnMove += value => print(value);
+        OnMove += value => print(value);
     }
 
     private void OnDestroy()
