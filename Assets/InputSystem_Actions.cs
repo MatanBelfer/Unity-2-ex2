@@ -201,31 +201,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Agent1"",
-                    ""type"": ""Button"",
-                    ""id"": ""2d71ae77-3c2c-4d50-ac3c-45a22855e57e"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Agent2"",
-                    ""type"": ""Button"",
-                    ""id"": ""4001b24d-3b46-463a-bbe8-85eec70027e1"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Select Character"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""16680723-b464-47be-a1a7-1cc6e2b8fe5c"",
                     ""expectedControlType"": ""Integer"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -649,32 +631,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4009d42c-c3c1-45b2-beb7-8f32ccd5f3b2"",
+                    ""id"": ""cf5f46d1-77cf-4cbb-b733-5d62ddcc84cc"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Agent1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4c899b77-9ec1-4122-8f57-fda748ffeda8"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Agent2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""15a1c533-364d-4f89-ad55-f72ccfcba586"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale"",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Select Character"",
                     ""isComposite"": false,
@@ -682,11 +642,99 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a99c5b6d-9167-4e54-a950-5c6ff0c7314c"",
-                    ""path"": """",
+                    ""id"": ""e234c803-8045-4b5c-a63c-12aefd6c6c6e"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89eca64b-c322-48e9-8d31-40b82d7bacaa"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39be255a-16c9-45de-8375-5d3ff7d27fc9"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38ff60e4-c157-4b5a-9324-e46ab5528bb8"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=5)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e98e70f-59c3-4b48-9e04-7ad60039275c"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=6)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38be2e50-dd12-4a14-b8cc-1d73c5b13558"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=7)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78b0c92e-c032-4869-9a4e-f02518f4e2ca"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=8)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9fedaf6-d6df-4e7b-909a-33b380fe17d1"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=9)"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""df9332a8-e64f-47f6-af67-12756ec04014"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=10)"",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Select Character"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1287,8 +1335,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         m_Player_Recenter = m_Player.FindAction("Recenter", throwIfNotFound: true);
         m_Player_RightClick = m_Player.FindAction("RightClick", throwIfNotFound: true);
-        m_Player_Agent1 = m_Player.FindAction("Agent1", throwIfNotFound: true);
-        m_Player_Agent2 = m_Player.FindAction("Agent2", throwIfNotFound: true);
         m_Player_SelectCharacter = m_Player.FindAction("Select Character", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1395,8 +1441,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Zoom;
     private readonly InputAction m_Player_Recenter;
     private readonly InputAction m_Player_RightClick;
-    private readonly InputAction m_Player_Agent1;
-    private readonly InputAction m_Player_Agent2;
     private readonly InputAction m_Player_SelectCharacter;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
@@ -1457,14 +1501,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/RightClick".
         /// </summary>
         public InputAction @RightClick => m_Wrapper.m_Player_RightClick;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Agent1".
-        /// </summary>
-        public InputAction @Agent1 => m_Wrapper.m_Player_Agent1;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Agent2".
-        /// </summary>
-        public InputAction @Agent2 => m_Wrapper.m_Player_Agent2;
         /// <summary>
         /// Provides access to the underlying input action "Player/SelectCharacter".
         /// </summary>
@@ -1531,12 +1567,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RightClick.started += instance.OnRightClick;
             @RightClick.performed += instance.OnRightClick;
             @RightClick.canceled += instance.OnRightClick;
-            @Agent1.started += instance.OnAgent1;
-            @Agent1.performed += instance.OnAgent1;
-            @Agent1.canceled += instance.OnAgent1;
-            @Agent2.started += instance.OnAgent2;
-            @Agent2.performed += instance.OnAgent2;
-            @Agent2.canceled += instance.OnAgent2;
             @SelectCharacter.started += instance.OnSelectCharacter;
             @SelectCharacter.performed += instance.OnSelectCharacter;
             @SelectCharacter.canceled += instance.OnSelectCharacter;
@@ -1587,12 +1617,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RightClick.started -= instance.OnRightClick;
             @RightClick.performed -= instance.OnRightClick;
             @RightClick.canceled -= instance.OnRightClick;
-            @Agent1.started -= instance.OnAgent1;
-            @Agent1.performed -= instance.OnAgent1;
-            @Agent1.canceled -= instance.OnAgent1;
-            @Agent2.started -= instance.OnAgent2;
-            @Agent2.performed -= instance.OnAgent2;
-            @Agent2.canceled -= instance.OnAgent2;
             @SelectCharacter.started -= instance.OnSelectCharacter;
             @SelectCharacter.performed -= instance.OnSelectCharacter;
             @SelectCharacter.canceled -= instance.OnSelectCharacter;
@@ -1980,20 +2004,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRightClick(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Agent1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAgent1(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Agent2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAgent2(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Select Character" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
