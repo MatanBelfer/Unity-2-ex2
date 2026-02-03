@@ -7,15 +7,16 @@ using UnityEngine.InputSystem;
 public class OmriRTSCamera : MonoBehaviour
 {
     [Header("Cinemachine")]
-    [SerializeField] private CinemachineFollow follow;
+    [SerializeField] private CinemachineFollow followComponent;
+    [SerializeField] private CinemachineFollowZoom zoomComponent;
 
     [Header("Moving")] 
     [SerializeField] private float moveSpeed;
     private Vector3 moveDelta;
     [Header("Zooming")]
     [SerializeField] private float zoomSpeed;
-    [SerializeField] private float minDist;
-    [SerializeField] private float maxDist;
+    [SerializeField] private float minWidth;
+    [SerializeField] private float maxWidth;
 
     [Header("Following Target")] 
     public Transform followTarget;
@@ -30,12 +31,8 @@ public class OmriRTSCamera : MonoBehaviour
 
     public void Zoom(float zoomAmount)
     {
-        if (Mathf.Abs(zoomAmount) > 0.001f)
-        {
-            float dist = follow.FollowOffset.magnitude;
-            dist = Mathf.Clamp(dist - zoomAmount * zoomSpeed * Time.deltaTime, minDist, maxDist);
-            follow.FollowOffset = follow.FollowOffset.normalized * dist;
-        }
+        zoomComponent.Width += -zoomAmount * zoomSpeed * Time.deltaTime;
+        zoomComponent.Width = Mathf.Clamp(zoomComponent.Width, minWidth, maxWidth);
     }
 
     private void Update()
