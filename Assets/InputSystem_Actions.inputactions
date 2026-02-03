@@ -8,7 +8,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "351f2ccd-1f9f-44bf-9bec-d62ac5c5f408",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -128,6 +128,15 @@
                     "type": "Button",
                     "id": "4001b24d-3b46-463a-bbe8-85eec70027e1",
                     "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Character",
+                    "type": "PassThrough",
+                    "id": "16680723-b464-47be-a1a7-1cc6e2b8fe5c",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -571,6 +580,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Agent2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15a1c533-364d-4f89-ad55-f72ccfcba586",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Select Character",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a99c5b6d-9167-4e54-a950-5c6ff0c7314c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Character",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

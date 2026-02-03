@@ -17,9 +17,6 @@ public class OmriRTSCamera : MonoBehaviour
     [SerializeField] private float minDist;
     [SerializeField] private float maxDist;
 
-    [SerializeField] private Camera mainCamera; // Reference to the main camera for raycasting
-    [SerializeField] private LayerMask groundLayerMask = 1; // LayerMask for the ground/terrain layer
-
     [Header("Following Target")] 
     public Transform followTarget;
     private bool following = false;

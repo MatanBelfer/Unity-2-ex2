@@ -94,7 +94,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""351f2ccd-1f9f-44bf-9bec-d62ac5c5f408"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -214,6 +214,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""type"": ""Button"",
                     ""id"": ""4001b24d-3b46-463a-bbe8-85eec70027e1"",
                     ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select Character"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""16680723-b464-47be-a1a7-1cc6e2b8fe5c"",
+                    ""expectedControlType"": ""Integer"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -657,6 +666,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Agent2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15a1c533-364d-4f89-ad55-f72ccfcba586"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Select Character"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a99c5b6d-9167-4e54-a950-5c6ff0c7314c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select Character"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1258,6 +1289,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_RightClick = m_Player.FindAction("RightClick", throwIfNotFound: true);
         m_Player_Agent1 = m_Player.FindAction("Agent1", throwIfNotFound: true);
         m_Player_Agent2 = m_Player.FindAction("Agent2", throwIfNotFound: true);
+        m_Player_SelectCharacter = m_Player.FindAction("Select Character", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1365,6 +1397,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RightClick;
     private readonly InputAction m_Player_Agent1;
     private readonly InputAction m_Player_Agent2;
+    private readonly InputAction m_Player_SelectCharacter;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1433,6 +1466,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Agent2 => m_Wrapper.m_Player_Agent2;
         /// <summary>
+        /// Provides access to the underlying input action "Player/SelectCharacter".
+        /// </summary>
+        public InputAction @SelectCharacter => m_Wrapper.m_Player_SelectCharacter;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1500,6 +1537,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Agent2.started += instance.OnAgent2;
             @Agent2.performed += instance.OnAgent2;
             @Agent2.canceled += instance.OnAgent2;
+            @SelectCharacter.started += instance.OnSelectCharacter;
+            @SelectCharacter.performed += instance.OnSelectCharacter;
+            @SelectCharacter.canceled += instance.OnSelectCharacter;
         }
 
         /// <summary>
@@ -1553,6 +1593,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Agent2.started -= instance.OnAgent2;
             @Agent2.performed -= instance.OnAgent2;
             @Agent2.canceled -= instance.OnAgent2;
+            @SelectCharacter.started -= instance.OnSelectCharacter;
+            @SelectCharacter.performed -= instance.OnSelectCharacter;
+            @SelectCharacter.canceled -= instance.OnSelectCharacter;
         }
 
         /// <summary>
@@ -1951,6 +1994,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAgent2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Select Character" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectCharacter(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
