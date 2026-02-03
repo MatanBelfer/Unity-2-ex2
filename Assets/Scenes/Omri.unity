@@ -1962,6 +1962,7 @@ MonoBehaviour:
   minWidth: 10
   maxWidth: 20
   followTarget: {fileID: 1065900621}
+  following: 1
 --- !u!1 &962556140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2431,7 @@ GameObject:
   - component: {fileID: 1074429245}
   - component: {fileID: 1074429244}
   - component: {fileID: 1074429250}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: LavaJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2904,6 +2905,14 @@ PrefabInstance:
     - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_AgentTypeID
       value: -1372625422
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_Acceleration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_WalkableMask
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Name
@@ -3554,6 +3563,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnRightClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2037247829}
+        m_TargetAssemblyTypeName: MultiCharacterController, Assembly-CSharp
+        m_MethodName: MoveCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1485738331
 Transform:
   m_ObjectHideFlags: 0
@@ -3614,7 +3638,7 @@ GameObject:
   - component: {fileID: 1558278898}
   - component: {fileID: 1558278897}
   - component: {fileID: 1558278903}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Lava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4651,7 +4675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634951220}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462346, y: 0.00036793045, z: -0.0001440749, w: 0.93115497}
+  m_LocalRotation: {x: 0.3646235, y: 0.0003310135, z: -0.0001296189, w: 0.931155}
   m_LocalPosition: {x: 0, y: 22, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5174,7 +5198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818553745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462346, y: 0.00036793042, z: -0.0001440749, w: 0.93115497}
+  m_LocalRotation: {x: 0.36462346, y: 0.00033101346, z: -0.00012961887, w: 0.931155}
   m_LocalPosition: {x: 0, y: 22, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

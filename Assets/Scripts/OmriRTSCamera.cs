@@ -20,7 +20,7 @@ public class OmriRTSCamera : MonoBehaviour
 
     [Header("Following Target")] 
     public Transform followTarget;
-    private bool following = false;
+    [SerializeField] private bool following;
     
     public void SetMoveInput(Vector2 move)
     {

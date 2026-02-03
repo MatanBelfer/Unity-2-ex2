@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public UnityEvent<float> OnZoom;
     public UnityEvent<int> OnSelectCharacter;
     public UnityEvent OnRecenter;
+    public UnityEvent OnRightClick;
     
     private void Awake()
     {
@@ -24,6 +25,11 @@ public class InputManager : MonoBehaviour
         actions.Player.Zoom.performed += ctx => OnZoom?.Invoke(ctx.ReadValue<float>());
         actions.Player.SelectCharacter.performed += ctx => OnSelectCharacter?.Invoke((int)ctx.ReadValue<float>());
         actions.Player.Recenter.performed += _ => OnRecenter?.Invoke();
+        actions.Player.RightClick.performed += _ => OnRightClick?.Invoke();
+        
+        // OnSelectCharacter.AddListener(num => print(num));
+        // OnMove.AddListener(vec => print(vec));
+        // OnRightClick.AddListener(() => print("Right Click"));
     }
 
     // private void OnDestroy()
