@@ -9,8 +9,10 @@ public class OmriRTSCamera : MonoBehaviour
     [Header("Cinemachine")]
     [SerializeField] private CinemachineFollow follow;
 
-    [Header("Tuning")] 
+    [Header("Moving")] 
     [SerializeField] private float moveSpeed;
+    private Vector3 moveDelta;
+    [Header("Zooming")]
     [SerializeField] private float zoomSpeed;
     [SerializeField] private float minDist;
     [SerializeField] private float maxDist;
@@ -25,16 +27,15 @@ public class OmriRTSCamera : MonoBehaviour
     
     private void Start()
     {
-        InputManager.OnMove += ManualMove;
+        InputManager.OnMove += SetMoveInput;
         InputManager.OnZoom += Zoom;
     }
 
-    private void ManualMove(Vector2 move)
+    private void SetMoveInput(Vector2 move)
     {
         following = false;
         
-        Vector3 delta = new Vector3(move.x, 0f, move.y) * (moveSpeed * Time.deltaTime);
-        transform.position += delta;
+        moveDelta = new Vector3(move.x, 0f, move.y) * (moveSpeed * Time.deltaTime);
     }
 
     private void Zoom(float zoomAmount)
@@ -50,6 +51,8 @@ public class OmriRTSCamera : MonoBehaviour
     void Update()
     {
         FollowTarget();
+        
+        transform.position += moveDelta;
     }
 
     private void FollowTarget()
