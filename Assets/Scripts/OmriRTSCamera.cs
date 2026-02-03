@@ -18,17 +18,26 @@ public class OmriRTSCamera : MonoBehaviour
     [SerializeField] private float maxDist;
 
     [Header("Following Target")] 
+    [SerializeField] private MultiCharacterController characterController;
     public Transform followTarget;
     private bool following = false;
     
-    public void SetMoveInput(Vector2 move)
+    
+    private void Start()
+    {
+        InputManager.OnMove += SetMoveInput;
+        InputManager.OnZoom += Zoom;
+        InputManager.OnRecenter += Recenter;
+    }
+
+    private void SetMoveInput(Vector2 move)
     {
         following = false;
         
         moveDelta = new Vector3(move.x, 0f, move.y) * (moveSpeed * Time.deltaTime);
     }
 
-    public void Zoom(float zoomAmount)
+    private void Zoom(float zoomAmount)
     {
         if (Mathf.Abs(zoomAmount) > 0.001f)
         {
@@ -53,13 +62,9 @@ public class OmriRTSCamera : MonoBehaviour
         }
     }
 
-    public void Recenter()
+    private void Recenter()
     {
         following = true;
-    }
-    
-    public void ChangeFollowingCharacter(CharacterComponents character)
-    {
-        followTarget = character.cameraFollowTarget;
+        followTarget = characterController.GetCurrentCharacter().cameraFollowTarget;
     }
 }
