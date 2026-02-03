@@ -1955,12 +1955,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119e39cecedad72459492606bb2e5c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  followComponent: {fileID: 1818553747}
-  zoomComponent: {fileID: 1818553750}
+  follow: {fileID: 1818553747}
   moveSpeed: 20
-  zoomSpeed: 500
-  minWidth: 10
-  maxWidth: 20
+  zoomSpeed: 200
+  minDist: 50
+  maxDist: 100
+  characterController: {fileID: 2037247829}
   followTarget: {fileID: 1065900621}
 --- !u!1 &962556140
 GameObject:
@@ -4651,7 +4651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634951220}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462346, y: 0.00036793045, z: -0.0001440749, w: 0.93115497}
+  m_LocalRotation: {x: 0.3646235, y: 0.00012714739, z: -0.00004978862, w: 0.931155}
   m_LocalPosition: {x: 0, y: 22, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5174,7 +5174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818553745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462346, y: 0.00036793042, z: -0.0001440749, w: 0.93115497}
+  m_LocalRotation: {x: 0.3646235, y: 0.00012714739, z: -0.000049788618, w: 0.9311551}
   m_LocalPosition: {x: 0, y: 22, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5195,7 +5195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollowZoom
   Width: 10
   Damping: 1
-  FovRange: {x: 1, y: 179}
+  FovRange: {x: 3, y: 70}
 --- !u!1 &1903656145
 GameObject:
   m_ObjectHideFlags: 0
