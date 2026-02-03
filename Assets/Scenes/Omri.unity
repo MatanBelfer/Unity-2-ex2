@@ -3491,6 +3491,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b1387f635059c46aa0b37cd00856d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMove:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 872585367}
+        m_TargetAssemblyTypeName: OmriRTSCamera, Assembly-CSharp
+        m_MethodName: SetMoveInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnZoom:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 872585367}
+        m_TargetAssemblyTypeName: OmriRTSCamera, Assembly-CSharp
+        m_MethodName: Zoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSelectCharacter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2037247829}
+        m_TargetAssemblyTypeName: MultiCharacterController, Assembly-CSharp
+        m_MethodName: ChangeCharacter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRecenter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 872585367}
+        m_TargetAssemblyTypeName: OmriRTSCamera, Assembly-CSharp
+        m_MethodName: Recenter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1485738331
 Transform:
   m_ObjectHideFlags: 0
@@ -5327,6 +5390,21 @@ MonoBehaviour:
   agentsToControl:
   - {fileID: 1755644343}
   - {fileID: 70572122}
+  OnCharacterChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 872585367}
+        m_TargetAssemblyTypeName: OmriRTSCamera, Assembly-CSharp
+        m_MethodName: ChangeFollowingCharacter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2037247830
 Transform:
   m_ObjectHideFlags: 0

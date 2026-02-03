@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using Input = UnityEngine.Windows.Input;
 
 public class MultiCharacterController : MonoBehaviour
@@ -10,6 +11,7 @@ public class MultiCharacterController : MonoBehaviour
     [SerializeField, HideInInspector] private NavMeshAgent[] agentsToControl;
     public Func<CharacterComponents> GetCurrentCharacter;
     private NavMeshAgent currentAgent;
+    public UnityEvent<CharacterComponents> OnCharacterChange;
 
     private void OnValidate()
     {
@@ -18,19 +20,16 @@ public class MultiCharacterController : MonoBehaviour
 
     private void Awake()
     {
-        ChangeCharacter(0);
+        ChangeCharacter(1);
     }
 
-    private void Start()
+    public void ChangeCharacter(int agentNumber)
     {
-        InputManager.OnSelectCharacter += number => ChangeCharacter(number - 1);
-    }
-
-    private void ChangeCharacter(int agentIndex)
-    {
-        if (agentIndex >= agentsToControl.Length) return;
-        currentAgent = agentsToControl[agentIndex];
-        GetCurrentCharacter = () => characters[agentIndex];
+        int index = agentNumber - 1;
+        if (index >= agentsToControl.Length) return;
+        currentAgent = agentsToControl[index];
+        GetCurrentCharacter = () => characters[index];
+        OnCharacterChange.Invoke(characters[index]);
         
         print("controlling " + currentAgent.gameObject.name);
     }
