@@ -11,8 +11,6 @@ public class InputManager : MonoBehaviour
     public static event Action OnInteract;
     public static event Action<Vector2> OnMove;
     public static event Action<float> OnZoom;
-    public static event Action<int> OnSelectCharacter;
-    public static event Action OnRecenter;
     
     private void Awake()
     {
@@ -22,11 +20,8 @@ public class InputManager : MonoBehaviour
         actions.Player.Interact.performed += _ => OnInteract?.Invoke();
         actions.Player.Move.performed += ctx => OnMove?.Invoke(ctx.ReadValue<Vector2>());
         actions.Player.Zoom.performed += ctx => OnZoom?.Invoke(ctx.ReadValue<float>());
-        actions.Player.SelectCharacter.performed += ctx => OnSelectCharacter?.Invoke((int)ctx.ReadValue<float>());
-        actions.Player.Recenter.performed += _ => OnRecenter?.Invoke();
         
         //OnMove += value => print(value);
-        // OnSelectCharacter += value => print(value);
     }
 
     private void OnDestroy()
@@ -36,8 +31,6 @@ public class InputManager : MonoBehaviour
         OnInteract = null;
         OnMove = null;
         OnZoom = null;
-        OnSelectCharacter = null; 
-        OnRecenter = null;
     }
 
     private void OnEnable()

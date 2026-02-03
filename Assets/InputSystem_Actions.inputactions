@@ -115,13 +115,31 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Agent1",
+                    "type": "Button",
+                    "id": "2d71ae77-3c2c-4d50-ac3c-45a22855e57e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Agent2",
+                    "type": "Button",
+                    "id": "4001b24d-3b46-463a-bbe8-85eec70027e1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Select Character",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "16680723-b464-47be-a1a7-1cc6e2b8fe5c",
                     "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -545,21 +563,32 @@
                 },
                 {
                     "name": "",
-                    "id": "cf5f46d1-77cf-4cbb-b733-5d62ddcc84cc",
+                    "id": "4009d42c-c3c1-45b2-beb7-8f32ccd5f3b2",
                     "path": "<Keyboard>/1",
                     "interactions": "",
-                    "processors": "Scale",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agent1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e234c803-8045-4b5c-a63c-12aefd6c6c6e",
+                    "id": "4c899b77-9ec1-4122-8f57-fda748ffeda8",
                     "path": "<Keyboard>/2",
                     "interactions": "",
-                    "processors": "Scale(factor=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agent2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15a1c533-364d-4f89-ad55-f72ccfcba586",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Select Character",
                     "isComposite": false,
@@ -567,88 +596,11 @@
                 },
                 {
                     "name": "",
-                    "id": "89eca64b-c322-48e9-8d31-40b82d7bacaa",
-                    "path": "<Keyboard>/3",
+                    "id": "a99c5b6d-9167-4e54-a950-5c6ff0c7314c",
+                    "path": "",
                     "interactions": "",
-                    "processors": "Scale(factor=3)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "39be255a-16c9-45de-8375-5d3ff7d27fc9",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "Scale(factor=4)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "38ff60e4-c157-4b5a-9324-e46ab5528bb8",
-                    "path": "<Keyboard>/5",
-                    "interactions": "",
-                    "processors": "Scale(factor=5)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0e98e70f-59c3-4b48-9e04-7ad60039275c",
-                    "path": "<Keyboard>/6",
-                    "interactions": "",
-                    "processors": "Scale(factor=6)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "38be2e50-dd12-4a14-b8cc-1d73c5b13558",
-                    "path": "<Keyboard>/7",
-                    "interactions": "",
-                    "processors": "Scale(factor=7)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "78b0c92e-c032-4869-9a4e-f02518f4e2ca",
-                    "path": "<Keyboard>/8",
-                    "interactions": "",
-                    "processors": "Scale(factor=8)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e9fedaf6-d6df-4e7b-909a-33b380fe17d1",
-                    "path": "<Keyboard>/9",
-                    "interactions": "",
-                    "processors": "Scale(factor=9)",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Select Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "df9332a8-e64f-47f6-af67-12756ec04014",
-                    "path": "<Keyboard>/0",
-                    "interactions": "",
-                    "processors": "Scale(factor=10)",
-                    "groups": ";Keyboard&Mouse",
+                    "processors": "",
+                    "groups": "",
                     "action": "Select Character",
                     "isComposite": false,
                     "isPartOfComposite": false
