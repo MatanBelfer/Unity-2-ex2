@@ -139,8 +139,61 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2471444481993707896, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6524632737569724679}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3131629328990310274}
+    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3534286853604941500}
   m_SourcePrefab: {fileID: 100100000, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+--- !u!1 &4057750333337504815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+  m_PrefabInstance: {fileID: 6764255228344972418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3131629328990310274
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057750333337504815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 46f311046d2104da8b56be3d0a49a119, type: 3}
+  m_Controller: {fileID: 9100000, guid: 006cb50090489864dbbe4d20aeaf306e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3534286853604941500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057750333337504815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473d4360e0641314e976b8be9f0dd2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  agent: {fileID: 4366994891064553258}
+  animator: {fileID: 3131629328990310274}
+  movingParameter: IsMoving
+--- !u!195 &4366994891064553258 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+  m_PrefabInstance: {fileID: 6764255228344972418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9112428043773030594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2570059278487553088, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
