@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.AI;
@@ -33,5 +34,12 @@ public class SurfaceDetector : MonoBehaviour
         {
             lastAreaMask = hit.mask;
         }
+    }
+
+    private void Start()
+    {
+        OnSurfaceChange.AddListener(
+            mask => UIManager.Instance.LogMessage($"{gameObject.name} is on surface: " +
+                SurfaceTypeManager.Instance.GetSurfaceNameByMask(mask)));
     }
 }

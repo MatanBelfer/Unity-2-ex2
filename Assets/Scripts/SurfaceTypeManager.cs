@@ -18,9 +18,9 @@ public class SurfaceTypeManager : MonoBehaviour
         surfaceNames = NavMesh.GetAreaNames();
     }
 
-    public void PrintSurfaceNameByMask(int mask)
+    public string GetSurfaceNameByMask(int mask)
     {
         int index = math.ceillog2(mask);
-        print(surfaceNames[index]);
+        return surfaceNames[index];
     }
 }
