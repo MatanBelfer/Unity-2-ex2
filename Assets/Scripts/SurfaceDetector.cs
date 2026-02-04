@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System;
-using UnityEditor;
 
-public class Controller : MonoBehaviour
+public class SurfaceDetector : MonoBehaviour
 {
     private NavMeshAgent agent;
     private int lastAreaIndex;
@@ -11,8 +9,9 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        print(string.Join(", ", NavMesh.GetAreaNames()));
         agent = GetComponent<NavMeshAgent>();
-        lastAreaIndex = getCurrentSurfaceIndex();
+        lastAreaIndex = GetCurrentSurfaceMask();
     }
 
     void FixedUpdate()
@@ -21,7 +20,7 @@ public class Controller : MonoBehaviour
     }
 
 
-    private int getCurrentSurfaceIndex()
+    private int GetCurrentSurfaceMask()
     {
         NavMeshHit hit;
         NavMesh.SamplePosition(transform.position, out hit, 0.1f, NavMesh.AllAreas);
@@ -33,14 +32,14 @@ public class Controller : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 0.1f, NavMesh.AllAreas))
         {
-            int currentAreaIndex = hit.mask;
+            int currentAreaMask = hit.mask;
 
-            if (currentAreaIndex != lastAreaIndex)
+            if (currentAreaMask != lastAreaIndex)
             {
-                Debug.Log("Area changed to " + currentAreaIndex);
+                Debug.Log("Area changed to " + currentAreaMask);
             }
 
-            lastAreaIndex = currentAreaIndex;
+            lastAreaIndex = currentAreaMask;
         }
     }
 }
