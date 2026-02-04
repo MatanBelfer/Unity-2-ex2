@@ -15,7 +15,7 @@ NavMeshProjectSettings:
     cost: 10
   - name: Water
     cost: 20
-  - name: 
+  - name: Spectator
     cost: 1
   - name: 
     cost: 1

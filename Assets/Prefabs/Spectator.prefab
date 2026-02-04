@@ -115,12 +115,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9112428043773030594}
     - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_BaseOffset
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_AgentTypeID
       value: -334000983
       objectReference: {fileID: 0}
     - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_WalkableMask
-      value: 4294967295
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Name
@@ -128,6 +132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5854775829673944781, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+    - {fileID: 3038907549213921382, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1282807458616080316, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
     m_AddedGameObjects:
