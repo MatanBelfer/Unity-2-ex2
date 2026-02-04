@@ -5938,6 +5938,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 591253155}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PrintSurfaceNameByMask
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SurfaceTypeManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Name
       value: Michael
@@ -6370,6 +6394,14 @@ PrefabInstance:
     - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957672129996120097, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: OnSurfaceChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_AgentTypeID

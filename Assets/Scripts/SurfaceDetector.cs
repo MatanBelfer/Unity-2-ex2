@@ -1,30 +1,29 @@
+using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class SurfaceDetector : MonoBehaviour
 {
-    private NavMeshAgent agent;
-    private int lastAreaIndex;
-
-
-    void Start()
+    private int lastAreaMask
     {
-        print(string.Join(", ", NavMesh.GetAreaNames()));
-        agent = GetComponent<NavMeshAgent>();
-        lastAreaIndex = GetCurrentSurfaceMask();
+        get => _lastAreaMask;
+        set
+        {
+            if (value != _lastAreaMask)
+            {
+                _lastAreaMask = value;
+                OnSurfaceChange?.Invoke(value);
+            }
+        }
     }
+
+    private int _lastAreaMask = -1;
+    public UnityEvent<int> OnSurfaceChange;
 
     void FixedUpdate()
     {
         CheckSurface();
-    }
-
-
-    private int GetCurrentSurfaceMask()
-    {
-        NavMeshHit hit;
-        NavMesh.SamplePosition(transform.position, out hit, 0.1f, NavMesh.AllAreas);
-        return hit.mask;
     }
 
     private void CheckSurface()
@@ -32,14 +31,7 @@ public class SurfaceDetector : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(transform.position, out hit, 0.1f, NavMesh.AllAreas))
         {
-            int currentAreaMask = hit.mask;
-
-            if (currentAreaMask != lastAreaIndex)
-            {
-                Debug.Log("Area changed to " + currentAreaMask);
-            }
-
-            lastAreaIndex = currentAreaMask;
+            lastAreaMask = hit.mask;
         }
     }
 }
