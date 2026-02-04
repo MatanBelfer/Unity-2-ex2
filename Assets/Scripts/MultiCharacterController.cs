@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,29 +9,27 @@ using UnityEngine.InputSystem;
 public class MultiCharacterController : MonoBehaviour
 {
     private const string GroundLayerName = "Ground";
-    [SerializeField] private CharacterComponents[] characters;
-    [SerializeField, HideInInspector] private NavMeshAgent[] agentsToControl;
-    private NavMeshAgent currentAgent;
+    [SerializeField] private List<CharacterComponents> characters;
+    [SerializeField] private CharacterComponents spectatorPrefab;
+    private Dictionary<int, bool> isSpectator = new();
+    private CharacterComponents currentCharacter;
     public UnityEvent<CharacterComponents> OnCharacterChange;
-
-    private void OnValidate()
-    {
-        agentsToControl = characters.Select(c => c.navMeshAgent).ToArray();
-    }
 
     private void Awake()
     {
         ChangeCharacter(1);
+        
+        for (int i = 0; i < characters.Count; i++) isSpectator.Add(i, false);
     }
 
     public void ChangeCharacter(int agentNumber)
     {
         int index = agentNumber - 1;
-        if (index >= agentsToControl.Length) return;
-        currentAgent = agentsToControl[index];
+        if (index >= characters.Count) return;
+        currentCharacter = characters[index];
         OnCharacterChange.Invoke(characters[index]);
         
-        print("controlling " + currentAgent.gameObject.name);
+        print("controlling " + currentCharacter.gameObject.name);
     }
 
     public void MoveCharacter()
@@ -42,15 +41,22 @@ public class MultiCharacterController : MonoBehaviour
             return;
         }
 
-        Vector3 pointOnCollider = colliderHit.point;
-        // Vector3 pointBeyondCollider = ray.origin + ray.direction * (colliderHit.distance * 2);
-        //
-        // if (!NavMesh.Raycast(ray.origin, pointBeyondCollider, out NavMeshHit navMeshHit, NavMesh.AllAreas))
-        // {
-        //     return;
-        // }
+        currentCharacter.navMeshAgent.SetDestination(colliderHit.point);
+    }
+
+    public void KillAndSpectate()
+    {
+        int charIndex = characters.IndexOf(currentCharacter);
+        if (isSpectator[charIndex]) return;
         
-        // Debug.DrawLine(navMeshHit.position, navMeshHit.position + Vector3.up * .5f, Color.green, .1f);
-        currentAgent.SetDestination(pointOnCollider);
+        isSpectator[charIndex] = true;
+        
+        CharacterComponents spectator = 
+            Instantiate(spectatorPrefab, currentCharacter.transform.position, currentCharacter.transform.rotation);
+        characters[charIndex] = spectator;
+        
+        Destroy(currentCharacter.gameObject);
+        currentCharacter = spectator;
+        OnCharacterChange.Invoke(currentCharacter);
     }
 }
