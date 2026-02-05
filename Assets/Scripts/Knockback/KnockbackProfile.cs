@@ -28,4 +28,10 @@ public class KnockbackProfile : ScriptableObject
         AnimationCurve.Linear(0, 0.1f, 6, 0.4f);
 
     public float maxStun = 0.5f;
+    
+    [Header("Physical Knockback")]
+    public AnimationCurve physicalForceByImpact =
+        AnimationCurve.Linear(0, 3, 5, 10);
+    
+    
 }

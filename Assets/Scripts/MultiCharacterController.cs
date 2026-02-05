@@ -14,6 +14,7 @@ public class MultiCharacterController : MonoBehaviour
     private Dictionary<int, bool> isSpectator = new();
     private CharacterComponents currentCharacter;
     public UnityEvent<CharacterComponents> OnCharacterChange;
+    
 
     private void Awake()
     {
@@ -41,6 +42,8 @@ public class MultiCharacterController : MonoBehaviour
             return;
         }
 
+        if (!currentCharacter.navMeshAgent.enabled)
+            return;
         currentCharacter.navMeshAgent.SetDestination(colliderHit.point);
     }
 

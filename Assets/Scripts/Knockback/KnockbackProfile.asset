@@ -61,7 +61,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   minImpactSpeed: 0.5
-  maxDistance: 6
+  maxDistance: 1.5
   maxDuration: 1
   displacementEase:
     serializedVersion: 2
@@ -112,3 +112,27 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxStun: 0.5
+  physicalForceByImpact:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 4
+      inSlope: 0
+      outSlope: 1.6666666
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6
+      value: 14
+      inSlope: 1.6666666
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
 public class KnockbackReciever : MonoBehaviour,Iknockbackable
 {
     public event Action<KnockbackRequest> OnKnockbackStarted;
@@ -12,10 +13,12 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
 
    [SerializeField] private KnockbackProfile profile;
 
-   [Header("Behavior")] [SerializeField] private bool interruptKnockback;
-   [SerializeField] private float navmeshRadius = 0.5f;
+   [Header("Behavior")]
+   [SerializeField] private float settleVelocityThreshold = 0.1f;
+   
 
    private NavMeshAgent agent;
+   private Rigidbody rb;
    private Coroutine knockbackRoutine;
 
    private Vector3 cachedDestination;
@@ -26,6 +29,11 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
    private void Awake()
    {
       agent = GetComponent<NavMeshAgent>(); // get the navmesh of the current agent
+      rb = GetComponent<Rigidbody>();
+      rb.useGravity = false;
+      rb.interpolation = RigidbodyInterpolation.Interpolate;
+      rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+      rb.constraints = RigidbodyConstraints.FreezeRotation;
    }
 
    public void ApplyKnockback(KnockbackRequest request)
@@ -35,77 +43,46 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
          Debug.LogWarning($"{name}: No KnockbackProfile assigned.", this);
          return;
       }
-      if (!interruptKnockback && IsInKnockback) // if is already in a knockback dont apply again
+      if (IsInKnockback) // if is already in a knockback dont apply again
          return;
       if (knockbackRoutine != null)
          StopCoroutine(knockbackRoutine);
       
-      knockbackRoutine = StartCoroutine(DoKnockback(request));
+      knockbackRoutine = StartCoroutine(DoPhysicalKnockback(request));
       
       Debug.Log("Player knocked!");
    }
 
-   private IEnumerator DoKnockback(KnockbackRequest request)
+   private IEnumerator DoPhysicalKnockback(KnockbackRequest request)
    {
       IsInKnockback = true;
       OnKnockbackStarted?.Invoke(request);
       
       // so that the agent could resume path after knockback
-      hadPath = agent.hasPath;
-      cachedDestination = agent.destination;
 
-      agent.isStopped = true;
+      agent.isStopped = true; // disable navmesh agent
+      agent.updatePosition = false;
+      agent.enabled = false;
       
-      float duration = Mathf.Max(0.01f, request.Duration);
-      float distance = Mathf.Max(0f, request.Distance);
+      rb.linearVelocity = Vector3.zero;
       
-      Vector3 dir = request.Direction;
-      dir.y = 0f;
-      if (dir.sqrMagnitude < 0.0001f)
-         dir = -transform.forward;
-      dir.Normalize();
+      Vector3 force = request.Direction * (profile.physicalForceByImpact.Evaluate(request.Distance));
       
-      float elapsed = 0f;
-      float movedSoFar = 0f;
-
-      while (elapsed < duration)
-      {
-         elapsed += Time.deltaTime;
-         float t = Mathf.Clamp01(elapsed / duration);
-
-         float eased = profile.displacementEase.Evaluate(t);
-         float targetMoved = eased * distance;
-
-         float deltaMove = targetMoved - movedSoFar;
-         movedSoFar = targetMoved;
-
-         Vector3 delta = dir * deltaMove;
-         
-         Vector3 desiredPos = transform.position + delta;
-
-         if (NavMesh.SamplePosition(desiredPos, out var hit, navmeshRadius, agent.areaMask))
-         {
-            Vector3 correctedDelta = hit.position - transform.position;
-            agent.Move(correctedDelta);
-         }
-         else
-         {
-            agent.Move(delta);
-         }
-
+      rb.AddForce(force, ForceMode.Impulse);
+      
+      while (rb.linearVelocity.magnitude > settleVelocityThreshold)
          yield return null;
-      }
-
+      
       float stunDuration = Mathf.Min(
          1,
          profile.maxStun
       );
-      agent.nextPosition = transform.position;
-      agent.velocity = Vector3.zero;
-      agent.isStopped = true;
+      
 
       yield return new WaitForSeconds(stunDuration);
       
+      agent.enabled = true;
+      agent.Warp(transform.position);
       
       Debug.Log($"Stunnged for: {stunDuration}");
       agent.updatePosition = true;
