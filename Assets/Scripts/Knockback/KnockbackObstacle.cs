@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.AI;
 public class KnockbackObstacle : MonoBehaviour
 {
     [Header("Knockback")] [SerializeField] private KnockbackProfile profile;
-    [SerializeField] private LayerMask affectedLayers = ~0;
+    [SerializeField] private LayerMask affectedLayers = ~0; //everything
 
     [Header("Physics")] [SerializeField] private Rigidbody rb;
 
@@ -25,22 +26,22 @@ public class KnockbackObstacle : MonoBehaviour
 
         if (!triggerCollider)
         {
-            Debug.LogError("KnockbackTriggerObstacle requires a Collider", this);
+            Debug.LogError("Obstacle needs a Collider", this);
         }
 
         if (!triggerCollider.isTrigger)
         {
-            Debug.LogError("Collider must be set to IsTrigger = true", this);
+            Debug.LogError("IsTrigger = false", this);
         }
 
         if (rb == null)
             rb = GetComponentInParent<Rigidbody>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         int otherLayerMask = 1 << other.gameObject.layer;
-        if ((affectedLayers & otherLayerMask) == 0)
+        if ((affectedLayers.value & otherLayerMask) == 0)
             return;
 
 
@@ -80,7 +81,7 @@ public class KnockbackObstacle : MonoBehaviour
         if (other.GetComponentInParent<NavMeshAgent>() is NavMeshAgent agent)
             otherVel = agent.velocity;
 
-        float impactSpeed = Vector3.Dot(wallVel - otherVel, dir);
+        float impactSpeed = Vector3.Dot(wallVel - otherVel, dir)/1.5f;
         if (impactSpeed < profile.minImpactSpeed)
             return;
 
@@ -94,6 +95,12 @@ public class KnockbackObstacle : MonoBehaviour
             profile.durationByImpactSpeed.Evaluate(impactSpeed),
             profile.maxDuration
         );
+        
+        var controller = other.GetComponentInParent<KnockbackAnimatorDriver>();
+        if (controller != null)
+        {
+            controller.PlayKnockback(impactSpeed);
+        }
 
         knockbackable.ApplyKnockback(
             new KnockbackRequest(
@@ -114,5 +121,14 @@ public class KnockbackObstacle : MonoBehaviour
             $"Trigger hit by {other.name} on layer {LayerMask.LayerToName(other.gameObject.layer)}",
             this
         );
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var controller = other.GetComponentInParent<KnockbackAnimatorDriver>();
+        if (controller != null)
+        {
+            controller.Reset();
+        }
     }
 }

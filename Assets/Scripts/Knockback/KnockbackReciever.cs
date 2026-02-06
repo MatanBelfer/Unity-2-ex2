@@ -72,11 +72,8 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
       
       while (rb.linearVelocity.magnitude > settleVelocityThreshold)
          yield return null;
-      
-      float stunDuration = Mathf.Min(
-         1,
-         profile.maxStun
-      );
+
+      float stunDuration = profile.maxStun;
       
 
       yield return new WaitForSeconds(stunDuration);

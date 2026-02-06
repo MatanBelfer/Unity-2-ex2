@@ -1106,6 +1106,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &234824250 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+  m_PrefabInstance: {fileID: 1720347866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &252153910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4637,7 +4642,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 40.311295
+  field of view: 20.798948
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4663,7 +4668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254367019}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462346, y: 0.0006329238, z: -0.00024784156, w: 0.93115485}
+  m_LocalRotation: {x: 0.3646235, y: 0.00031645963, z: -0.00012391988, w: 0.931155}
   m_LocalPosition: {x: 0, y: 22, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4850,7 +4855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4700f9f03ad19f94baf0367cb7a9c988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollowZoom
-  Width: 20
+  Width: 10
   Damping: 1
   FovRange: {x: 1, y: 179}
 --- !u!114 &1296983404
@@ -4952,7 +4957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296983402}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36462343, y: 0.0006329238, z: -0.00024784153, w: 0.93115485}
+  m_LocalRotation: {x: 0.36462346, y: 0.0003164596, z: -0.00012391989, w: 0.931155}
   m_LocalPosition: {x: 0, y: 22, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5931,7 +5936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471444481993707896, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2471444481993707896, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5965,6 +5970,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 37b022a48aa8d8c49bf80111ba999519, type: 2}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Name
       value: Michael
@@ -5979,6 +6004,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1506236732}
+    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1506236738}
   m_SourcePrefab: {fileID: 100100000, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
 --- !u!114 &1506236725 stripped
 MonoBehaviour:
@@ -6019,7 +6047,7 @@ Rigidbody:
   m_GameObject: {fileID: 26785590}
   serializedVersion: 5
   m_Mass: 1.1
-  m_LinearDamping: 0.5
+  m_LinearDamping: 0.55
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -6037,6 +6065,22 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1506236738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26785590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d5d219bd93a194ea3b9eeee40ba624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackAnimatorDriver
+  animator: {fileID: 1732840723}
+  slowThreshold: 3
+  fastSpeed: 3
+  slowSpeed: 1.2
 --- !u!1 &1520406870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6568,7 +6612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471444481993707896, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2471444481993707896, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6602,6 +6646,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 37b022a48aa8d8c49bf80111ba999519, type: 2}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7009246980342651816, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_AgentTypeID
       value: -1372625422
@@ -6628,6 +6692,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1720347873}
+    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720347878}
   m_SourcePrefab: {fileID: 100100000, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
 --- !u!114 &1720347867 stripped
 MonoBehaviour:
@@ -6663,7 +6730,7 @@ Rigidbody:
   m_GameObject: {fileID: 1535507589}
   serializedVersion: 5
   m_Mass: 1.1
-  m_LinearDamping: 0.5
+  m_LinearDamping: 0.55
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -6681,6 +6748,27 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1720347878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535507589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d5d219bd93a194ea3b9eeee40ba624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackAnimatorDriver
+  animator: {fileID: 234824250}
+  slowThreshold: 3
+  fastSpeed: 3
+  slowSpeed: 1.2
+--- !u!95 &1732840723 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+  m_PrefabInstance: {fileID: 1506236724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1740880915
 GameObject:
   m_ObjectHideFlags: 0
