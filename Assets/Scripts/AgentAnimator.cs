@@ -23,17 +23,17 @@ public class AgentAnimator : MonoBehaviour
         _waterAreaIndex = NavMesh.GetAreaFromName("Water");
     }
 
-    private void OnEnable()
-    {
-        if (InputManager.Instance.OnSelectCharacter != null)
-            InputManager.Instance.OnWave.AddListener(PlayWave);
-    }
-    
-    private void OnDisable()
-    {
-        if (InputManager.Instance.OnSelectCharacter != null)
-            InputManager.Instance.OnWave.RemoveListener(PlayWave);
-    }
+    // private void OnEnable()
+    // {
+    //     if (InputManager.Instance.OnSelectCharacter != null)
+    //         InputManager.Instance.OnWave.AddListener(PlayWave);
+    // }
+    //
+    // private void OnDisable()
+    // {
+    //     if (InputManager.Instance.OnSelectCharacter != null)
+    //         InputManager.Instance.OnWave.RemoveListener(PlayWave);
+    // }
 
     private void Update()
     {

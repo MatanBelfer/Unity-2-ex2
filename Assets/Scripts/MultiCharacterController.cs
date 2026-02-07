@@ -22,6 +22,11 @@ public class MultiCharacterController : MonoBehaviour
         for (int i = 0; i < characters.Count; i++) isSpectator.Add(i, false);
     }
 
+    private void OnValidate()
+    {
+        
+    }
+
     public void ChangeCharacter(int agentNumber)
     {
         int index = agentNumber - 1;
