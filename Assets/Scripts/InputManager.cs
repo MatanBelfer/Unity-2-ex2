@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public UnityEvent<int> OnSelectCharacter;
     public UnityEvent OnRecenter;
     public UnityEvent OnRightClick;
+    public UnityEvent OnWave;
     
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class InputManager : MonoBehaviour
         actions.Player.SelectCharacter.performed += ctx => OnSelectCharacter?.Invoke((int)ctx.ReadValue<float>());
         actions.Player.Recenter.performed += _ => OnRecenter?.Invoke();
         actions.Player.RightClick.performed += _ => OnRightClick?.Invoke();
+        actions.Player.Wave.performed += _ => OnWave?.Invoke();
         
         // OnSelectCharacter.AddListener(num => print(num));
         // OnMove.AddListener(vec => print(vec));

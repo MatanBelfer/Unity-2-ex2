@@ -122,6 +122,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Wave",
+                    "type": "Button",
+                    "id": "a485ef89-6063-440c-9a52-50ca679bcb1c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -650,6 +659,17 @@
                     "processors": "Scale(factor=10)",
                     "groups": ";Keyboard&Mouse",
                     "action": "Select Character",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d2b9f1b-e94a-4959-b552-281c896e7c55",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Wave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -102,6 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0214793d7c9c949acec8aaabf7f17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller
+  OnSurfaceChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &3038907549213921382
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -198,6 +201,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
       propertyPath: m_Name
       value: X Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8080f4d89433034449b55d0711e13205, type: 2}
+    - target: {fileID: 5866666021909216657, guid: b01a7afa87e00aa45a9c56888ae84023, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
