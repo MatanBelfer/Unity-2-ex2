@@ -6143,6 +6143,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Controller
       value: 
@@ -6208,6 +6212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6ec722f57049068de5fc96600a3e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AgentAnimator
+--- !u!82 &1506236728 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+  m_PrefabInstance: {fileID: 1506236724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1506236731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6222,6 +6231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KnockbackReciever
   profile: {fileID: 11400000, guid: cfedae0f1f1b7fc4fbcc2bb0b5d7f7e3, type: 2}
   settleVelocityThreshold: 0.1
+  knockbackAudio: {fileID: 1506236728}
+  knockbackClip: {fileID: 8300000, guid: 3d9705a97605fa94b8f22017ee63ca5a, type: 3}
 --- !u!54 &1506236732
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6830,6 +6841,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
       propertyPath: m_Controller
       value: 
@@ -6891,6 +6910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce76ec573cb1aa4185127e15a849cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!82 &1720347868 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
+  m_PrefabInstance: {fileID: 1720347866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1720347872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6905,6 +6929,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KnockbackReciever
   profile: {fileID: 11400000, guid: cfedae0f1f1b7fc4fbcc2bb0b5d7f7e3, type: 2}
   settleVelocityThreshold: 0.1
+  knockbackAudio: {fileID: 1720347868}
+  knockbackClip: {fileID: 8300000, guid: 3d9705a97605fa94b8f22017ee63ca5a, type: 3}
 --- !u!54 &1720347873
 Rigidbody:
   m_ObjectHideFlags: 0

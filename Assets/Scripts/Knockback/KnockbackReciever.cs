@@ -25,6 +25,9 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
    private bool hadPath;
    
    public bool IsInKnockback { get; private set; }
+   
+   [SerializeField] private AudioSource knockbackAudio;
+   [SerializeField] private AudioClip knockbackClip;
 
    private void Awake()
    {
@@ -47,6 +50,10 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
          return;
       if (knockbackRoutine != null)
          StopCoroutine(knockbackRoutine);
+      if (knockbackAudio && knockbackClip)
+      {
+         knockbackAudio.PlayOneShot(knockbackClip);
+      }
       
       knockbackRoutine = StartCoroutine(DoPhysicalKnockback(request));
       
@@ -57,7 +64,6 @@ public class KnockbackReciever : MonoBehaviour,Iknockbackable
    {
       IsInKnockback = true;
       OnKnockbackStarted?.Invoke(request);
-      
       // so that the agent could resume path after knockback
 
       agent.isStopped = true; // disable navmesh agent
