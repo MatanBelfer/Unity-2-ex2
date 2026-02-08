@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+    public GameObject spawnPoint;
+    
     [SerializeField] private MultiCharacterController characterController;
-    [SerializeField] private UIManager uiManager;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private string resetPromptMessage = "Press R to reset the selected character.";
+    
 
     private readonly HashSet<CharacterComponents> charactersInResetZone = new();
     private CharacterComponents selectedCharacter;
     private bool promptShown;
 
+
     private void Awake()
     {
-        if (!characterController)
-            characterController = FindObjectOfType<MultiCharacterController>();
-        if (!uiManager)
-            uiManager = UIManager.Instance;
-        if (!inputManager)
-            inputManager = InputManager.Instance;
+        if (Instance && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        if (!characterController)
-            throw new Exception("MultiCharacterController not found");
-        if (!uiManager)
-            throw new Exception("UIManager not found");
-        if (!inputManager)
-            throw new Exception("InputManager not found");
+        Instance = this;
+        inputManager = InputManager.Instance;
+        DontDestroyOnLoad(gameObject);
+        
     }
 
     private void OnEnable()
@@ -82,8 +83,15 @@ public class GameManager : MonoBehaviour
         if (!charactersInResetZone.Contains(selectedCharacter))
             return;
 
-        selectedCharacter.ResetToStart();
-        uiManager.LogMessage($"{selectedCharacter.gameObject.name} reset to start.");
+        if (SurfaceTypeManager.Instance.GetSurfaceNameByMask(selectedCharacter.navMeshAgent.areaMask) == "Spectator")
+        {
+            characterController.Respawn();
+        }
+        else
+        {
+            selectedCharacter.ResetToStart();    
+        }
+        UIManager.Instance.LogMessage($"{selectedCharacter.gameObject.name} reset to start.");
     }
 
     private void UpdateResetPrompt()
@@ -92,7 +100,7 @@ public class GameManager : MonoBehaviour
         {
             if (!promptShown)
             {
-                uiManager.LogMessage(resetPromptMessage);
+                UIManager.Instance.LogMessage(resetPromptMessage);
                 promptShown = true;
             }
         }
