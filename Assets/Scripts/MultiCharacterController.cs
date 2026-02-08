@@ -27,10 +27,6 @@ public class MultiCharacterController : MonoBehaviour
         for (int i = 0; i < characters.Count; i++) isSpectator.Add(i, false);
     }
 
-    private void OnValidate()
-    {
-    }
-
     public void ChangeCharacter(int agentNumber)
     {
         int index = agentNumber - 1;
@@ -81,9 +77,7 @@ public class MultiCharacterController : MonoBehaviour
 
         CharacterComponents player =
             Instantiate(playerPrefab, GameManager.Instance.spawnPoint.transform.position, Quaternion.identity);
-        characters.Add(player);
-        charIndex = characters.IndexOf(player);
-        isSpectator.Add(charIndex, false);
+        characters[charIndex] = player;
         currentCharacter = player;
         OnCharacterChange.Invoke(currentCharacter);
     }
