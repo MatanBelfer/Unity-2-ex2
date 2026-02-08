@@ -124,9 +124,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Wave",
+                    "name": "Reset",
                     "type": "Button",
-                    "id": "a485ef89-6063-440c-9a52-50ca679bcb1c",
+                    "id": "4f9630c0-8689-468d-a222-6461a5bdabfe",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -664,12 +664,12 @@
                 },
                 {
                     "name": "",
-                    "id": "3d2b9f1b-e94a-4959-b552-281c896e7c55",
-                    "path": "<Keyboard>/f",
+                    "id": "fdd7bd15-e871-48a7-a090-e113c615873a",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Wave",
+                    "groups": "",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

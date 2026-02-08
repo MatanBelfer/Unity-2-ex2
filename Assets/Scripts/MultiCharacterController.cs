@@ -16,6 +16,8 @@ public class MultiCharacterController : MonoBehaviour
     public UnityEvent<CharacterComponents> OnCharacterChange;
     
 
+    public CharacterComponents CurrentCharacter => currentCharacter;
+
     private void Awake()
     {
         ChangeCharacter(1);
