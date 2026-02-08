@@ -371,21 +371,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnWave:
+  OnReset:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1506236727}
-        m_TargetAssemblyTypeName: AgentAnimator, Assembly-CSharp
-        m_MethodName: PlayWave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &16475551
 Transform:
   m_ObjectHideFlags: 0
@@ -1121,11 +1109,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &234824250 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-  m_PrefabInstance: {fileID: 1720347866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &252153910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6201,17 +6184,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2570059278487553088, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
   m_PrefabInstance: {fileID: 1506236724}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1506236727 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6133186761454480820, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-  m_PrefabInstance: {fileID: 1506236724}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6ec722f57049068de5fc96600a3e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AgentAnimator
 --- !u!82 &1506236728 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
@@ -6610,11 +6582,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &1535507589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-  m_PrefabInstance: {fileID: 1720347866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1657989538
 Mesh:
   m_ObjectHideFlags: 0
@@ -6888,92 +6855,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1720347872}
-    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1720347873}
-    - targetCorrespondingSourceObject: {fileID: 7318191233419622573, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1720347878}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
 --- !u!114 &1720347867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4546573841560475930, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
   m_PrefabInstance: {fileID: 1720347866}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535507589}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ce76ec573cb1aa4185127e15a849cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!82 &1720347868 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3314898824379637395, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
-  m_PrefabInstance: {fileID: 1720347866}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1720347872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535507589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec419c5fabb8bd41b152d495e070df1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReciever
-  profile: {fileID: 11400000, guid: cfedae0f1f1b7fc4fbcc2bb0b5d7f7e3, type: 2}
-  settleVelocityThreshold: 0.1
-  knockbackAudio: {fileID: 1720347868}
-  knockbackClip: {fileID: 8300000, guid: 3d9705a97605fa94b8f22017ee63ca5a, type: 3}
---- !u!54 &1720347873
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535507589}
-  serializedVersion: 5
-  m_Mass: 1.1
-  m_LinearDamping: 0.55
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!114 &1720347878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535507589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d5d219bd93a194ea3b9eeee40ba624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KnockbackAnimatorDriver
-  animator: {fileID: 234824250}
-  slowThreshold: 3
-  fastSpeed: 3
-  slowSpeed: 1.2
 --- !u!95 &1732840723 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5505244748866516860, guid: bf93d3fad20b4424098bf36bddb0152e, type: 3}
