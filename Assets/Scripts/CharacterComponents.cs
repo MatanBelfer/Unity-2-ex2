@@ -27,13 +27,16 @@ public class CharacterComponents : MonoBehaviour
 
     public void ResetToStart()
     {
+        
         if (_navMeshAgent && _navMeshAgent.enabled)
         {
+            
+            
             _navMeshAgent.ResetPath();
             _navMeshAgent.Warp(startPosition);
             _navMeshAgent.velocity = Vector3.zero;
         }
-
+        
         transform.SetPositionAndRotation(startPosition, startRotation);
     }
 }
