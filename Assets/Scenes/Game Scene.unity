@@ -2796,8 +2796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 13.299988, y: 3.2099915}
-  m_SizeDelta: {x: 465.4, y: 187.7}
+  m_AnchoredPosition: {x: 13.299988, y: 12.700012}
+  m_SizeDelta: {x: 465.4, y: 230.14}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &617894023
 MonoBehaviour:
@@ -2832,6 +2832,8 @@ MonoBehaviour:
 
     Spacebar - recenter camera
 
+    Scroll
+    - zoom camera
 
 '
   m_isRightToLeft: 0
@@ -2868,7 +2870,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
