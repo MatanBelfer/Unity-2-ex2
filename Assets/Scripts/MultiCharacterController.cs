@@ -26,6 +26,31 @@ public class MultiCharacterController : MonoBehaviour
 
         for (int i = 0; i < characters.Count; i++) isSpectator.Add(i, false);
     }
+    
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.OnWave.AddListener(HandleWave);
+    }
+
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.OnWave.RemoveListener(HandleWave);
+    }
+    
+    private void HandleWave()
+    {
+        if (!currentCharacter)
+            return;
+
+        var animator = currentCharacter.GetComponentInChildren<AgentAnimator>();
+
+        if (animator)
+        {
+            animator.PlayWave();
+        }
+    }
 
     public void ChangeCharacter(int agentNumber)
     {
